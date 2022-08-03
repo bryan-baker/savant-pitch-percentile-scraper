@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: '3.9'
       - name: Install necessary Python packages
-        run: pip install pandas beautifulsoup4 requests plotly matplotlib selenium webdriver-manager chromium-browser
+        run: apt-get install -y chromium-browser install pandas beautifulsoup4 requests plotly matplotlib selenium webdriver-manager
       # MAKE SURE YOUR SCRAPER FILENAME MATCHES THE FILENAME HERE!!
       - name: Run the scraping script
         run: python scraper.py
