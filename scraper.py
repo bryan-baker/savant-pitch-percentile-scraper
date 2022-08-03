@@ -19,7 +19,11 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.utils import ChromeType
+from selenium.webdriver.chrome.options import Options
 
+chrome_options = Options()
+chrome_options.add_argument("--headless")
+driver = webdriver.Chrome(options=chrome_options)
 
 # In[24]:
 
