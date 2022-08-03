@@ -17,14 +17,15 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
-
 from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.utils import ChromeType
 
 
 # In[24]:
 
 
-driver = webdriver.Chrome(ChromeDriverManager().install())
+driver_path = ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()
+driver = webdriver.Chrome(driver_path)
 driver.get('https://baseballsavant.mlb.com/leaderboard/percentile-rankings?type=pitcher&team=')
 driver.find_element(By.XPATH, '/html/body/div[2]/div/section/div[2]/form/div[2]/div/select').click()
 time.sleep(1)
