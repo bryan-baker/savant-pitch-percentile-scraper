@@ -21,15 +21,22 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.core.utils import ChromeType
 from selenium.webdriver.chrome.options import Options
 
+chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
+
 chrome_options = Options()
-chrome_options.add_argument("--headless")
-driver = webdriver.Chrome(options=chrome_options)
+options = [
+    "--headless",
+    "--disable-gpu",
+    "--window-size=1920,1200",
+    "--ignore-certificate-errors",
+    "--disable-extensions",
+    "--no-sandbox",
+    "--disable-dev-shm-usage"
+]
+for option in options:
+    chrome_options.add_argument(option)
 
-# In[24]:
-
-
-driver_path = ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()
-driver = webdriver.Chrome(driver_path)
+driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 driver.get('https://baseballsavant.mlb.com/leaderboard/percentile-rankings?type=pitcher&team=')
 driver.find_element(By.XPATH, '/html/body/div[2]/div/section/div[2]/form/div[2]/div/select').click()
 time.sleep(1)
