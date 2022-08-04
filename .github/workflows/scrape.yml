@@ -21,8 +21,10 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.9'
+      - name: Install necessary Chromium packages
+        run: apt-get install -y chromium-browser 
       - name: Install necessary Python packages
-        run: apt-get install -y chromium-browser install pandas beautifulsoup4 requests plotly matplotlib selenium webdriver-manager
+        run: pip install pandas beautifulsoup4 requests plotly matplotlib selenium webdriver-manager
       # MAKE SURE YOUR SCRAPER FILENAME MATCHES THE FILENAME HERE!!
       - name: Run the scraping script
         run: python scraper.py
