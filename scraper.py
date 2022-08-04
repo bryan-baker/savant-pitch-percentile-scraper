@@ -128,7 +128,7 @@ fig.write_image("radar.svg")
 # In[ ]:
 
 
-df.to_csv('nyy-pitch-percentile', index=False)
+# df.to_csv('nyy-pitch-percentile', index=False)
 
 
 # In[ ]:
