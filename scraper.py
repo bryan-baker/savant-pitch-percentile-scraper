@@ -67,7 +67,7 @@ cortes = [df.at['Nestor Cortes','xwOBA'], df.at['Nestor Cortes','HardHit%'],df.a
 taillon = [df.at['Jameson Taillon','xwOBA'], df.at['Jameson Taillon','HardHit%'],df.at['Jameson Taillon','K%'], 
         df.at['Jameson Taillon','Whiff%'], df.at['Jameson Taillon','BB%']]
 #montas = [df.at['Frankie Montas','xwOBA'], df.at['Frankie Montas','HardHit%'],df.at['Frankie Montas','K%'], 
-        df.at['Frankie Montas','Whiff%'], df.at['Frankie Montas','BB%']]
+       # df.at['Frankie Montas','Whiff%'], df.at['Frankie Montas','BB%']]
 
 cole = [*cole, cole[0]]
 sevy = [*sevy, sevy[0]]
