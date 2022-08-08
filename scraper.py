@@ -66,14 +66,14 @@ cortes = [df.at['Nestor Cortes','xwOBA'], df.at['Nestor Cortes','HardHit%'],df.a
         df.at['Nestor Cortes','Whiff%'], df.at['Nestor Cortes','BB%']]
 taillon = [df.at['Jameson Taillon','xwOBA'], df.at['Jameson Taillon','HardHit%'],df.at['Jameson Taillon','K%'], 
         df.at['Jameson Taillon','Whiff%'], df.at['Jameson Taillon','BB%']]
-#montas = [df.at['Frankie Montas','xwOBA'], df.at['Frankie Montas','HardHit%'],df.at['Frankie Montas','K%'], 
-       # df.at['Frankie Montas','Whiff%'], df.at['Frankie Montas','BB%']]
+montas = [df.at['Frankie Montas','xwOBA'], df.at['Frankie Montas','HardHit%'],df.at['Frankie Montas','K%'], 
+        df.at['Frankie Montas','Whiff%'], df.at['Frankie Montas','BB%']]
 
 cole = [*cole, cole[0]]
 sevy = [*sevy, sevy[0]]
 cortes = [*cortes, cortes[0]]
 taillon = [*taillon, taillon[0]]
-#montas = [*montas, montas[0]]
+montas = [*montas, montas[0]]
 
 
 fig = go.Figure(
@@ -82,7 +82,7 @@ fig = go.Figure(
         go.Scatterpolar(r=sevy, theta=categories, fill='toself', name='Luis Severino'),
         go.Scatterpolar(r=cortes, theta=categories, fill='toself', name='Nestor Cortes'),
         go.Scatterpolar(r=taillon, theta=categories, fill='toself', name='Jameson Taillon'),
-        #go.Scatterpolar(r=montas, theta=categories, fill='toself', name='Frankie Montas')
+        go.Scatterpolar(r=montas, theta=categories, fill='toself', name='Frankie Montas')
     ],
     layout=go.Layout(
         title=go.layout.Title(text='Yankees Starting Pitcher Percentile Rankings (2022)'),
